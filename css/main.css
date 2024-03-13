@@ -1,0 +1,805 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--text: #e7e7e0;
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-black.woff2);
+	font-weight: 900;
+}
+body {
+	background-color: #f7f7ee;
+	font-family: raleway_f, sans-serif;
+	line-height: 1.55;
+}
+.main-header {
+	position: relative;
+}
+.main-header::after {
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: calc(var(--index) * 10);
+	background-image: url(../img/ground.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: calc(var(--index) * -4.5);
+}
+.layers {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.layer {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	will-change: transform;
+	z-index: 2;
+	transition: var(--transition);
+}
+.layers__base {
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+	z-index: 0;
+}
+.layers__middle {
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+.layers__front {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+.layer__header {
+	z-index: 1;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition: var(--transition);
+	will-change: transform;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--text);
+	text-shadow: 0 0 15px #9d822b;
+}
+.layers__title {
+	font-size: calc(var(--index) * 2.65);
+	letter-spacing: calc(var(--index) / 2.25);
+}
+.layers__caption {
+	font-size: calc(var(--index) / 1.175);
+	letter-spacing: calc(var(--index) / 3.5);
+	margin-top: calc(var(--index) * -.75);
+  
+}
+.layers__caption2 {
+  position: absolute;
+  margin-top: calc(var(--index) * 15.2);
+  margin-left: calc(var(--index) * 35);
+  font-size: calc(var(--index) * 0.85);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+  cursor: pointer;
+  text-decoration: none; /* Убираем подчеркивание */
+}
+.layers__caption2:after{
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px; /* Высота линии */
+  background-color: black; /* Цвет подчеркивания при исчезании линии*/
+  transition: width 0.5s; /* Время эффекта */
+}
+.layers__caption2:hover:after{
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px; /* Высота линии */
+  background-color: rgb(0, 0, 0); /* Цвет подчеркивания при появлении линии*/
+  transition: width 0.5s;  /* Время эффекта */
+}
+.layers__caption3 {
+  position: absolute;
+  margin-top: calc(var(--index) * 17.2);
+  margin-left: calc(var(--index) * 35);
+  font-size: calc(var(--index) * 0.85);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+  cursor: pointer;
+  text-decoration: none; /* Убираем подчеркивание */
+}
+.layers__caption3:after{
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px; /* Высота линии */
+  background-color: black; /* Цвет подчеркивания при исчезании линии*/
+  transition: width 0.5s; /* Время эффекта */
+}
+.layers__caption3:hover:after{
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px; /* Высота линии */
+  background-color: rgb(0, 0, 0); /* Цвет подчеркивания при появлении линии*/
+  transition: width 0.5s;  /* Время эффекта */
+}
+.layers__caption4 {
+  position: absolute;
+  margin-top: calc(var(--index) * 19.2);
+  margin-left: calc(var(--index) * 35);
+  font-size: calc(var(--index) * 0.85);
+  color: #000000; /* Цвет обычной ссылки */
+  cursor: pointer;
+  text-decoration: none; /* Убираем подчеркивание */
+}
+.layers__caption4:after{
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px; /* Высота линии */
+  background-color: black; /* Цвет подчеркивания при исчезании линии*/
+  transition: width 0.5s; /* Время эффекта */
+}
+.layers__caption4:hover:after{
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px; /* Высота линии */
+  background-color: rgb(0, 0, 0); /* Цвет подчеркивания при появлении линии*/
+  transition: width 0.5s;  /* Время эффекта */
+}
+.main-article {
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	/* Update: */
+	top: -1px;
+	z-index: 10;
+}
+.main-article2 {
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	min-height: 20vh;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: left;
+	/* Update: */
+	top: -1px;
+	z-index: 10;
+}
+.main-article__header {
+	text-transform: uppercase;
+	font-size: calc(var(--index) * 1.8);
+	letter-spacing: calc(var(--index) / 7.5);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.main-article__paragraph {
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .9);
+	margin-top: calc(var(--index) / 1.25);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.content {
+	will-change: transform;
+}
+.copy {
+	position: absolute;
+	bottom: calc(var(--index) * 2.5);
+	opacity: .45;
+	font-size: calc(var(--index) * .75);
+	letter-spacing: calc(var(--index) / 37.5);
+}
+
+ul{
+	list-style-type: none;
+	width: 0px;
+}
+
+li{
+	position: relative;
+}
+
+.hover-image-scale {
+  display: inline-block; 
+  overflow: hidden; /* Скрываем всё за контуром */
+}
+.hover-image-scale img {
+  transition: 1s; /* Время эффекта */
+  display: block; 
+}
+.hover-image-scale img:hover {
+  transform: scale(1.2); /* Увеличиваем масштаб */
+}
+
+#img{
+  background-size: cover;
+}
+#square_first{
+  position: relative;
+  margin: 2%;
+}
+#square_second_first{
+  position: relative;
+  margin: 2%;
+  background-size: cover;
+}
+#square_second_second{
+  position: relative;
+  margin: 2%;
+  background-size: cover;
+}
+.text_menu{
+  position: absolute;
+  margin-top: calc(var(--index) * 1.2);
+  margin-left: calc(var(--index) * 29.5);
+  font-size: calc(var(--index) * 2);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+
+                         /* категории кофе */
+.text_menu_category_classic{
+  position: absolute;
+  margin-top: calc(var(--index) * 2.6);
+  margin-left: calc(var(--index) * 1.4);
+  font-size: calc(var(--index) * 1.5);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_category_branded{
+  position: absolute;
+  margin-top: calc(var(--index) * 13.9);
+  margin-left: calc(var(--index) * 1.4);
+  font-size: calc(var(--index) * 1.5);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_category_tea{
+  position: absolute;
+  margin-top: calc(var(--index) * 2.6);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1.5);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_category_milkshake{
+  position: absolute;
+  margin-top: calc(var(--index) * 13.9);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1.5);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+
+                         /* классический кофе */
+.text_menu_classic_americano{
+  position: absolute;
+  margin-top: calc(var(--index) * 6.6);
+  margin-left: calc(var(--index) * 1.4);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_cappuccino{
+  position: absolute;
+  margin-top: calc(var(--index) * 8.2);
+  margin-left: calc(var(--index) * 1.4);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_latte{
+  position: absolute;
+  margin-top: calc(var(--index) * 9.6);
+  margin-left: calc(var(--index) * 1.4);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+
+                         /* классический кофе грамовка */
+.text_menu_classic_200ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 5.6);
+  margin-left: calc(var(--index) * 9.4);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_300ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 5.6);
+  margin-left: calc(var(--index) * 12.4);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_400ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 5.6);
+  margin-left: calc(var(--index) * 15.4);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                       /* классический кофе цена */
+.text_menu_classic_110{
+  position: absolute;
+  margin-top: calc(var(--index) * 6.7);
+  margin-left: calc(var(--index) * 9.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_130{
+  position: absolute;
+  margin-top: calc(var(--index) * 8.3);
+  margin-left: calc(var(--index) * 9.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_140{
+  position: absolute;
+  margin-top: calc(var(--index) * 9.7);
+  margin-left: calc(var(--index) * 9.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+
+
+.text_menu_classic_135{
+  position: absolute;
+  margin-top: calc(var(--index) * 6.7);
+  margin-left: calc(var(--index) * 12.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_150{
+  position: absolute;
+  margin-top: calc(var(--index) * 8.3);
+  margin-left: calc(var(--index) * 12.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_160{
+  position: absolute;
+  margin-top: calc(var(--index) * 9.7);
+  margin-left: calc(var(--index) * 12.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+
+
+.text_menu_classic_155{
+  position: absolute;
+  margin-top: calc(var(--index) * 6.7);
+  margin-left: calc(var(--index) * 15.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_180{
+  position: absolute;
+  margin-top: calc(var(--index) * 8.3);
+  margin-left: calc(var(--index) * 15.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_classic_190{
+  position: absolute;
+  margin-top: calc(var(--index) * 9.7);
+  margin-left: calc(var(--index) * 15.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                       /* фирменные напитки */
+.text_menu_branded_nighthorm{
+  position: absolute;
+  margin-top: calc(var(--index) * 17.9);
+  margin-left: calc(var(--index) * 1.4);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_matchalatte{
+  position: absolute;
+  margin-top: calc(var(--index) * 19.5);
+  margin-left: calc(var(--index) * 1.4);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_vanillaraf{
+  position: absolute;
+  margin-top: calc(var(--index) * 20.9);
+  margin-left: calc(var(--index) * 1.4);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_cheeseraf{
+  position: absolute;
+  margin-top: calc(var(--index) * 22.3);
+  margin-left: calc(var(--index) * 1.4);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                       /* граммовка фирменные напитки */
+.text_menu_branded_200ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 16.9);
+  margin-left: calc(var(--index) * 9.4);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_300ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 16.9);
+  margin-left: calc(var(--index) * 12.4);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_400ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 16.9);
+  margin-left: calc(var(--index) * 15.4);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                       /* фирменные напитки цена */
+.text_menu_branded_110{
+  position: absolute;
+  margin-top: calc(var(--index) * 18);
+  margin-left: calc(var(--index) * 9.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_120{
+  position: absolute;
+  margin-top: calc(var(--index) * 20);
+  margin-left: calc(var(--index) * 9.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_135{
+  position: absolute;
+  margin-top: calc(var(--index) * 21);
+  margin-left: calc(var(--index) * 9.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_140{
+  position: absolute;
+  margin-top: calc(var(--index) * 22.4);
+  margin-left: calc(var(--index) * 9.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+
+.text_menu_branded_130{
+  position: absolute;
+  margin-top: calc(var(--index) * 18);
+  margin-left: calc(var(--index) * 12.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_145{
+  position: absolute;
+  margin-top: calc(var(--index) * 19.6);
+  margin-left: calc(var(--index) * 12.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_150{
+  position: absolute;
+  margin-top: calc(var(--index) * 21);
+  margin-left: calc(var(--index) * 12.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_160{
+  position: absolute;
+  margin-top: calc(var(--index) * 22.4);
+  margin-left: calc(var(--index) * 12.5);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+
+
+.text_menu_branded_155{
+  position: absolute;
+  margin-top: calc(var(--index) * 18);
+  margin-left: calc(var(--index) * 15.6);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_170{
+  position: absolute;
+  margin-top: calc(var(--index) * 19.6);
+  margin-left: calc(var(--index) * 15.6);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_180{
+  position: absolute;
+  margin-top: calc(var(--index) * 21);
+  margin-left: calc(var(--index) * 15.6);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_branded_190{
+  position: absolute;
+  margin-top: calc(var(--index) * 22.4);
+  margin-left: calc(var(--index) * 15.6);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                      /* категории чая */
+.text_menu_tea_greentea{
+  position: absolute;
+  margin-top: calc(var(--index) * 6.6);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_whitetea{
+  position: absolute;
+  margin-top: calc(var(--index) * 8.2);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tead_wheelingtea{
+  position: absolute;
+  margin-top: calc(var(--index) * 9.6);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_blacktea{
+  position: absolute;
+  margin-top: calc(var(--index) * 11);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                      /* грамовка чая */
+.text_menu_tea_200ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 5.6);
+  margin-left: calc(var(--index) * 54.8);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_300ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 5.7);
+  margin-left: calc(var(--index) * 57.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_400ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 5.7);
+  margin-left: calc(var(--index) * 60.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                      /* цены чая */
+.text_menu_tea_105{
+  position: absolute;
+  margin-top: calc(var(--index) * 6.7);
+  margin-left: calc(var(--index) * 54.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_120{
+  position: absolute;
+  margin-top: calc(var(--index) * 8.3);
+  margin-left: calc(var(--index) * 54.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_110{
+  position: absolute;
+  margin-top: calc(var(--index) * 9.7);
+  margin-left: calc(var(--index) * 54.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_100{
+  position: absolute;
+  margin-top: calc(var(--index) * 11.1);
+  margin-left: calc(var(--index) * 54.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+
+
+.text_menu_tea_130{
+  position: absolute;
+  margin-top: calc(var(--index) * 6.7);
+  margin-left: calc(var(--index) * 57.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_150{
+  position: absolute;
+  margin-top: calc(var(--index) * 8.3);
+  margin-left: calc(var(--index) * 57.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_140{
+  position: absolute;
+  margin-top: calc(var(--index) * 9.7);
+  margin-left: calc(var(--index) * 57.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_135{
+  position: absolute;
+  margin-top: calc(var(--index) * 11.1);
+  margin-left: calc(var(--index) * 57.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+
+
+.text_menu_tea_155{
+  position: absolute;
+  margin-top: calc(var(--index) * 6.7);
+  margin-left: calc(var(--index) * 60.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_160{
+  position: absolute;
+  margin-top: calc(var(--index) * 8.3);
+  margin-left: calc(var(--index) * 60.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_165{
+  position: absolute;
+  margin-top: calc(var(--index) * 9.7);
+  margin-left: calc(var(--index) * 60.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_tea_175{
+  position: absolute;
+  margin-top: calc(var(--index) * 11.1);
+  margin-left: calc(var(--index) * 60.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                      /* категория молочные коктейли */
+.text_menu_milkshake_strawberry{
+  position: absolute;
+  margin-top: calc(var(--index) * 17.9);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_milkshake_chocolate{
+  position: absolute;
+  margin-top: calc(var(--index) * 19.5);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_milkshake_snickers{
+  position: absolute;
+  margin-top: calc(var(--index) * 20.9);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_milkshake_blackberry{
+  position: absolute;
+  margin-top: calc(var(--index) * 22.3);
+  margin-left: calc(var(--index) * 46.8);
+  font-size: calc(var(--index) * 1);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                      /* молочные коктейли грамовка */
+.text_menu_milkshake_400ml{
+  position: absolute;
+  margin-top: calc(var(--index) * 16.9);
+  margin-left: calc(var(--index) * 60.8);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+                      /* молочные коктейли цена */
+.text_menu_milkshake_230{
+  position: absolute;
+  margin-top: calc(var(--index) * 18);
+  margin-left: calc(var(--index) * 60.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_milkshake_240{
+  position: absolute;
+  margin-top: calc(var(--index) * 19.6);
+  margin-left: calc(var(--index) * 60.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_milkshake_250{
+  position: absolute;
+  margin-top: calc(var(--index) * 21);
+  margin-left: calc(var(--index) * 60.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.text_menu_milkshake_260{
+  position: absolute;
+  margin-top: calc(var(--index) * 22.6);
+  margin-left: calc(var(--index) * 60.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.namjoon{
+  position: absolute;
+  margin-top: calc(var(--index) * 3.6);
+  margin-left: calc(var(--index) * 5.9);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.yoongi{
+  position: absolute;
+  margin-top: calc(var(--index) * 16.9);
+  margin-left: calc(var(--index) * 7.4);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.jungkook{
+  position: absolute;
+  margin-top: calc(var(--index) * 3.3);
+  margin-left: calc(var(--index) * 51);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.v{
+  position: absolute;
+  margin-top: calc(var(--index) * 16.6);
+  margin-left: calc(var(--index) * 51);
+  font-size: calc(var(--index) * 0.7);
+  color: #5c5c5c; /* Цвет обычной ссылки */
+}
+.nayjk{
+  position: absolute;
+  margin-top: calc(var(--index) * 31.8);
+  margin-left: calc(var(--index) * 21);
+  font-size: calc(var(--index) * 0.7);
+  color: #000000; /* Цвет обычной ссылки */
+}
